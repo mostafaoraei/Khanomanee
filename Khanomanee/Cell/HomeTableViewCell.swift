@@ -21,14 +21,13 @@ class HomeTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: "cellId")
         
         setupView()
-//        self.semanticContentAttribute = .forceRightToLeft
+
     }
     
     // itemLabel
     let itemLabel: UILabel = {
         
         let label = UILabel()
-        label.backgroundColor = UIColor.brown
         label.heightAnchor.constraint(equalToConstant: 44).isActive = true
         label.translatesAutoresizingMaskIntoConstraints = false
         label.semanticContentAttribute = .forceRightToLeft
@@ -40,7 +39,7 @@ class HomeTableViewCell: UITableViewCell {
     let iconImageView: UIImageView = {
         
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.yellow
+        imageView.backgroundColor = UIColor.gray
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 22
         imageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
@@ -57,16 +56,6 @@ class HomeTableViewCell: UITableViewCell {
         addSubview(itemLabel)
         addSubview(iconImageView)
         
-        // MARK: constraints
-        // iconImage constraints
-        
-//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[v0(44)]-8-[v1]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : iconImageView, "v1" : itemLabel]))
-//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(44)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : iconImageView]))
-//
-//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(44)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : itemLabel]))
-//        addConstraint(NSLayoutConstraint(item: itemLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 16))
-//        addConstraint(NSLayoutConstraint(item: itemLabel, attribute: .left, relatedBy: .equal, toItem: iconImageView, attribute: .right, multiplier: 1, constant: -8))
-        
         
         self.iconImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
         self.iconImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
@@ -82,3 +71,12 @@ class HomeTableViewCell: UITableViewCell {
     }
     
 }
+// MARK: constraints
+// iconImage constraints
+
+//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[v0(44)]-8-[v1]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : iconImageView, "v1" : itemLabel]))
+//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(44)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : iconImageView]))
+//
+//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(44)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : itemLabel]))
+//        addConstraint(NSLayoutConstraint(item: itemLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 16))
+//        addConstraint(NSLayoutConstraint(item: itemLabel, attribute: .left, relatedBy: .equal, toItem: iconImageView, attribute: .right, multiplier: 1, constant: -8))
