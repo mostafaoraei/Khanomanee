@@ -20,6 +20,7 @@ class ZanRozViewController: UIViewController, UICollectionViewDataSource, UIColl
         super.viewDidLoad()
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumLineSpacing = 50
+
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
         collectionView.register(ZanRozCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
         
@@ -39,6 +40,8 @@ class ZanRozViewController: UIViewController, UICollectionViewDataSource, UIColl
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath as IndexPath) as! ZanRozCollectionViewCell
         cell.backgroundColor = UIColor.green
+        cell.layer.cornerRadius = 33
+        cell.layer.masksToBounds = true
         return cell
     }
     
