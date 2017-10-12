@@ -105,6 +105,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         self.view.frame = r
     }
     
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
 //        self.hideKeyboardWhenTappedAround()
     }

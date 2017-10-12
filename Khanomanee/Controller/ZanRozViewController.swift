@@ -10,7 +10,7 @@ import UIKit
 
 class ZanRozViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
-    let leftAndRightPaddings: CGFloat = 80.0
+    let leftAndRightPaddings: CGFloat = 40.0
     let numberOfItemsPerRow: CGFloat = 2.0
     let screenSize: CGRect = UIScreen.main.bounds
     private let cellReuseIdentifier = "collectionCell"
@@ -19,13 +19,13 @@ class ZanRozViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumLineSpacing = 50
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
         collectionView.register(ZanRozCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
         
 //        collectionView.registerClass(ZanRozCollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.cyan
         
         self.view.addSubview(collectionView)
     }
@@ -42,18 +42,26 @@ class ZanRozViewController: UIViewController, UICollectionViewDataSource, UIColl
         return cell
     }
     
-    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         
         // create loop for diffrent size of cells
-        let width = (screenSize.width-leftAndRightPaddings)/numberOfItemsPerRow
-        let size = CGSize(width: width, height: width)
-        return size
+        
+        if indexPath.row % 3 == 2 {
+            let width = (screenSize.width-leftAndRightPaddings)
+            let size = CGSize(width: width, height: width)
+            return size
+        } else {
+            let width = (screenSize.width-leftAndRightPaddings)/numberOfItemsPerRow
+            let size = CGSize(width: width, height: width)
+            return size
+        }
+        
     }
     
-    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
     {
-        return UIEdgeInsets(top: 20, left: 8, bottom: 5, right: 8)
+        return UIEdgeInsets(top: 220, left: 8, bottom: 55, right: 8)
     }
 
 }
