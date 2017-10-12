@@ -66,7 +66,21 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         return search
     }()
     
+    let headerView: UIView = {
+        let view = UIView()
+        view.heightAnchor.constraint(equalToConstant: 30)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
+    let header: UILabel = {
+        let label = UILabel()
+        label.text = "Trending"
+        label.font = UIFont.boldSystemFont(ofSize: 33)
+        label.heightAnchor.constraint(equalToConstant: 10)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
         
     
     
@@ -125,26 +139,18 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let headerView: UIView = {
-            let view = UIView()
-            view.heightAnchor.constraint(equalToConstant: 30)
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
         
-        let header: UILabel = {
-            let label = UILabel()
-            label.text = "Trending"
-            label.font = UIFont.boldSystemFont(ofSize: 33)
-            label.heightAnchor.constraint(equalToConstant: -10)
-            label.translatesAutoresizingMaskIntoConstraints = false
-            return label
-        }()
         
-        headerView.addSubview(header)
+        self.headerView.addSubview(header)
         self.view.addSubview(headerView)
         
-        headerView.heightAnchor.constraint(equalToConstant: 50)
+        self.header.trailingAnchor.constraint(equalTo: headerView.trailingAnchor)
+        self.header.leadingAnchor.constraint(equalTo: headerView.leadingAnchor)
+        self.header.topAnchor.constraint(equalTo: headerView.topAnchor)
+        self.header.bottomAnchor.constraint(equalTo: headerView.bottomAnchor)
+
+        headerView.heightAnchor.constraint(equalToConstant: 10)
+        headerView.bottomAnchor.constraint(equalTo: self.trendsTableView.topAnchor)
         
         return headerView
     }
@@ -157,19 +163,20 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     func setupView(){
 
-        self.view.addSubview(searchBar)
         self.view.addSubview(trendsTableView)
+        self.view.addSubview(searchBar)
         self.trendsTableView.tableFooterView = UIView()
+        
         //add constraint searchbar
         self.searchBar.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 65).isActive = true
         self.searchBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         self.searchBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-
+        
         //add constraint tableView
-        self.trendsTableView.topAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        self.trendsTableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
         self.trendsTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         self.trendsTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        self.trendsTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 20).isActive = true
+        self.trendsTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
     }
     

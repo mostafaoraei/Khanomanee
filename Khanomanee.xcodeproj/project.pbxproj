@@ -16,6 +16,7 @@
 		73C73BF01F8A290000E4D9FA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C73BEF1F8A290000E4D9FA /* SearchViewController.swift */; };
 		73C73BF21F8A293D00E4D9FA /* ZanRozViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C73BF11F8A293D00E4D9FA /* ZanRozViewController.swift */; };
 		73C73BF81F8A34D400E4D9FA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C73BF71F8A34D400E4D9FA /* HomeTableViewCell.swift */; };
+		73CA83BB1F8E4E2C005A9A79 /* ZanRozCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA83BA1F8E4E2C005A9A79 /* ZanRozCollectionViewCell.swift */; };
 		73FEB84B1F8CC89E00A79627 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FEB84A1F8CC89E00A79627 /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		73C73BEF1F8A290000E4D9FA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		73C73BF11F8A293D00E4D9FA /* ZanRozViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZanRozViewController.swift; sourceTree = "<group>"; };
 		73C73BF71F8A34D400E4D9FA /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		73CA83BA1F8E4E2C005A9A79 /* ZanRozCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZanRozCollectionViewCell.swift; sourceTree = "<group>"; };
 		73FEB84A1F8CC89E00A79627 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 			children = (
 				73C73BF71F8A34D400E4D9FA /* HomeTableViewCell.swift */,
 				73FEB84A1F8CC89E00A79627 /* SearchTableViewCell.swift */,
+				73CA83BA1F8E4E2C005A9A79 /* ZanRozCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				73C73BF81F8A34D400E4D9FA /* HomeTableViewCell.swift in Sources */,
 				73C73BF21F8A293D00E4D9FA /* ZanRozViewController.swift in Sources */,
 				73C73BF01F8A290000E4D9FA /* SearchViewController.swift in Sources */,
+				73CA83BB1F8E4E2C005A9A79 /* ZanRozCollectionViewCell.swift in Sources */,
 				73C73BEE1F8A28CE00E4D9FA /* CategoryViewController.swift in Sources */,
 				73C73BEC1F8A168300E4D9FA /* TabBarController.swift in Sources */,
 				73FEB84B1F8CC89E00A79627 /* SearchTableViewCell.swift in Sources */,
